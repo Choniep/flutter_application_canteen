@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/components/my_drawer_tile.dart';
-import 'package:flutter_application_canteen/pages/setting_page.dart';
+import 'package:flutter_application_canteen/pages/customer/setting_page.dart';
 import 'package:flutter_application_canteen/services/auth/auth_service.dart';
 
 class MyDrawer extends StatelessWidget {

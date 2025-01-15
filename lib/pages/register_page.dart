@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/components/my_button.dart';
 import 'package:flutter_application_canteen/components/my_textfield.dart';
@@ -18,6 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
 
   // register method
   void register() async {
@@ -104,6 +106,17 @@ class _RegisterPageState extends State<RegisterPage> {
             MyTextfield(
               controller: emailController,
               hintText: "Email",
+              obscureText: false,
+            ),
+
+            const SizedBox(
+              height: 10,
+            ),
+
+            //username textfield
+            MyTextfield(
+              controller: usernameController,
+              hintText: "username",
               obscureText: false,
             ),
 

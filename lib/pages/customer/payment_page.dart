@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/components/my_button.dart';
-import 'package:flutter_application_canteen/pages/delivery_progress_page.dart';
+import 'package:flutter_application_canteen/pages/customer/delivery_progress_page.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 class PaymentPage extends StatefulWidget {

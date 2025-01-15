@@ -7,7 +7,7 @@ import 'package:flutter_application_canteen/components/my_sliver_app_bar.dart';
 import 'package:flutter_application_canteen/components/my_tab_bar.dart';
 import 'package:flutter_application_canteen/models/food.dart';
 import 'package:flutter_application_canteen/models/restaurant.dart';
-import 'package:flutter_application_canteen/pages/food_page.dart';
+import 'package:flutter_application_canteen/pages/customer/food_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {

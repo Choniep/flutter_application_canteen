@@ -3,7 +3,7 @@ import 'package:flutter_application_canteen/components/my_button.dart';
 import 'package:flutter_application_canteen/components/my_cart_tile.dart';
 import 'package:flutter_application_canteen/models/cart_item.dart';
 import 'package:flutter_application_canteen/models/restaurant.dart';
-import 'package:flutter_application_canteen/pages/payment_page.dart';
+import 'package:flutter_application_canteen/pages/customer/payment_page.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
