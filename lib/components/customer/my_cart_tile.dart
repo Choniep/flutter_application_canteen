@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_canteen/components/my_quantity_selector.dart';
+import 'package:flutter_application_canteen/components/customer/my_quantity_selector.dart';
 import 'package:flutter_application_canteen/models/cart_item.dart';
 import 'package:flutter_application_canteen/models/restaurant.dart';
 import 'package:provider/provider.dart';

@@ -21,6 +21,10 @@ class _RegisterPageState extends State<RegisterPage> {
       TextEditingController();
   final TextEditingController usernameController = TextEditingController();
 
+  // dropdown role options
+  final List<String> roles = ['Customer', 'Pemilik Stan'];
+  String? selectedRole = 'Customer'; // to store selected role
+
   // register method
   void register() async {
     // fill out authentication here
@@ -28,24 +32,32 @@ class _RegisterPageState extends State<RegisterPage> {
     // get auth service
     final _authService = AuthService();
 
-    // check if password match -> create user
+    // check if password match && role is selected-> create user
     if (passwordController.text == confirmPasswordController.text) {
-      // try creating user
-      try {
-        await _authService.signUpWithEmailPassword(
-          emailController.text,
-          passwordController.text,
-        );
-      }
+      if (selectedRole != null) {
+        // try creating user
+        try {
+          await _authService.signUpWithEmailPassword(emailController.text,
+              passwordController.text, usernameController.text, selectedRole);
+        }
 
-      // display any errors
-      catch (e) {
+        // display any errors
+        catch (e) {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text(
+                e.toString(),
+              ),
+            ),
+          );
+        }
+      } else {
+        // show error if no role selected
         showDialog(
           context: context,
-          builder: (context) => AlertDialog(
-            title: Text(
-              e.toString(),
-            ),
+          builder: (context) => const AlertDialog(
+            title: Text("Please select role"),
           ),
         );
       }
@@ -61,13 +73,13 @@ class _RegisterPageState extends State<RegisterPage> {
       );
     }
 
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: Theme.of(context).colorScheme.background,
-        title: const Text("User wants to register."),
-      ),
-    );
+    // showDialog(
+    //   context: context,
+    //   builder: (context) => AlertDialog(
+    //     backgroundColor: Theme.of(context).colorScheme.background,
+    //     title: const Text("User wants to register."),
+    //   ),
+    // );
   }
 
   @override
@@ -143,7 +155,25 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
 
             const SizedBox(
-              height: 25,
+              height: 10,
+            ),
+
+            // role dropdown
+            DropdownButton<String>(
+              value: selectedRole,
+              hint: Text("Select your role"),
+              isExpanded: false,
+              items: roles.map<DropdownMenuItem<String>>((role) {
+                return DropdownMenuItem<String>(
+                  value: role,
+                  child: Text(role),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  selectedRole = value;
+                });
+              },
             ),
 
             // sign up button

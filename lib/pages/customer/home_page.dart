@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_canteen/components/my_current_location.dart';
+import 'package:flutter_application_canteen/components/customer/my_current_location.dart';
 import 'package:flutter_application_canteen/components/my_description_box.dart';
 import 'package:flutter_application_canteen/components/my_drawer.dart';
 import 'package:flutter_application_canteen/components/my_food_tile.dart';

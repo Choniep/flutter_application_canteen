@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/pages/customer/home_page.dart';
+import 'package:flutter_application_canteen/pages/stan/home_stan.dart';
 import 'package:flutter_application_canteen/services/auth/login_or_register.dart';
 
 class AuthGate extends StatelessWidget {
@@ -14,7 +16,28 @@ class AuthGate extends StatelessWidget {
           builder: (context, snapshot) {
             // user is logged in
             if (snapshot.hasData) {
-              return const HomePage();
+              // user signed in
+              return FutureBuilder<DocumentSnapshot>(
+                future: FirebaseFirestore.instance
+                    .collection('users')
+                    .doc(snapshot.data!.uid)
+                    .get(),
+                builder: (context, userSnapshot) {
+                  if (userSnapshot.connectionState == ConnectionState.waiting) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+
+                  String role = userSnapshot.data!['role'];
+                  if (role == 'Customer') {
+                    return const HomePage();
+                  } else if (role == 'Pemilik Stan') {
+                    return const HomeStan();
+                  }
+                  return const LoginOrRegister();
+                },
+              );
             }
 
             // user is NOT logged in

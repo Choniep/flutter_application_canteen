@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/pages/stan/profil_stan.dart';
+import 'package:flutter_application_canteen/services/auth/auth_service.dart';
 
 class HomeStan extends StatefulWidget {
   const HomeStan({super.key});
@@ -10,6 +11,11 @@ class HomeStan extends StatefulWidget {
 
 class _HomeStanState extends State<HomeStan> {
   int _selectedIndex = 0;
+
+  void logout() {
+    final _authService = AuthService();
+    _authService.signOut();
+  }
 
   // fungsi untuk navigasi ke halaman
   void _onItemTapped(int index) {
@@ -35,12 +41,7 @@ class _HomeStanState extends State<HomeStan> {
         );
         break;
       case 2:
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomeStan(),
-          ),
-        );
+        logout();
         break;
     }
   }
