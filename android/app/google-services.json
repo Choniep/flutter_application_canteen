@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "691730659749",
+    "project_id": "ukk-canteen-store",
+    "storage_bucket": "ukk-canteen-store.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691730659749:android:faf87711e97edb6d44104c",
+        "android_client_info": {
+          "package_name": "com.example.canteenstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDenzQTZG3VECJNF2tHrjNL9CWKLtfJt_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
