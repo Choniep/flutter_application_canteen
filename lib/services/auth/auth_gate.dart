@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/pages/customer/home_page.dart';
-import 'package:flutter_application_canteen/pages/stan/home_stan.dart';
+import 'package:flutter_application_canteen/pages/stan/main_screen.dart';
 import 'package:flutter_application_canteen/services/auth/login_or_register.dart';
 
 class AuthGate extends StatelessWidget {
@@ -33,7 +33,7 @@ class AuthGate extends StatelessWidget {
                   if (role == 'Customer') {
                     return const HomePage();
                   } else if (role == 'Pemilik Stan') {
-                    return const HomeStan();
+                    return const MainScreen();
                   }
                   return const LoginOrRegister();
                 },

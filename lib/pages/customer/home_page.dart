@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/components/customer/my_current_location.dart';
-import 'package:flutter_application_canteen/components/my_description_box.dart';
-import 'package:flutter_application_canteen/components/my_drawer.dart';
+import 'package:flutter_application_canteen/components/customer/my_description_box.dart';
+import 'package:flutter_application_canteen/components/customer/my_drawer_customer.dart';
 import 'package:flutter_application_canteen/components/my_food_tile.dart';
-import 'package:flutter_application_canteen/components/my_sliver_app_bar.dart';
-import 'package:flutter_application_canteen/components/my_tab_bar.dart';
+import 'package:flutter_application_canteen/components/customer/my_sliver_app_bar.dart';
+import 'package:flutter_application_canteen/components/customer/my_tab_bar_customer.dart';
 import 'package:flutter_application_canteen/models/food.dart';
 import 'package:flutter_application_canteen/models/restaurant.dart';
 import 'package:flutter_application_canteen/pages/customer/food_page.dart';
