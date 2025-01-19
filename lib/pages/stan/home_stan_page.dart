@@ -13,6 +13,7 @@ class HomeStanPage extends StatefulWidget {
 }
 
 class _HomeStanPageState extends State<HomeStanPage> {
+
   // Return a single widget for all foods
   Widget getAllFoods(List<Food> fullMenu) {
     return ListView.builder(
@@ -49,6 +50,58 @@ class _HomeStanPageState extends State<HomeStanPage> {
         child: Consumer<Restaurant>(
           builder: (context, restaurant, child) => getAllFoods(restaurant.menu),
         ),
+=======
+  List<Food> menuItems(List<Food> fullMenu) {
+    return fullMenu.toList();
+  }
+
+  // Return a single widget for all foods
+  Widget getAllFoods(List<Food> fullMenu) {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: fullMenu.length,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemBuilder: (context, index) {
+          final food = fullMenu[index];
+          return FoodTile(
+            food: food,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FoodPage(food: food),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Welcome",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                "Kantik Pak Lebah",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          getAllFoods(menuItems(fullMenu)),
+        ],
       ),
     );
   }
