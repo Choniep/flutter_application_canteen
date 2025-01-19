@@ -8,4 +8,13 @@ ThemeData lightMode = ThemeData(
     tertiary: Colors.white,
     inversePrimary: Colors.grey.shade700,
   ),
+  fontFamily: 'ProductSans',
+  textTheme: TextTheme(
+    bodyMedium: TextStyle(
+      fontSize: 16.0,
+    ),
+    bodyLarge: TextStyle(
+      fontSize: 32,
+    ),
+  ),
 );
