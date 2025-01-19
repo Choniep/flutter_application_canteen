@@ -5,8 +5,28 @@ class HomeStanPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Home Stan"),
+    return Padding(
+      padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Welcome",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                "Kantik Pak Lebah",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
