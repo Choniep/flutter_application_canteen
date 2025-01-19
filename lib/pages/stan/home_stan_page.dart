@@ -41,7 +41,7 @@ class _HomeStanPageState extends State<HomeStanPage> {
         SliverAppBar(
           expandedHeight: 120,
           collapsedHeight: 90,
-          title: Text("Canteen"),
+          title: Text("Sikma"),
         )
       ],
       body: Padding(
