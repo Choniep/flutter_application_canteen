@@ -55,17 +55,22 @@ class ProfilStanPage extends StatelessWidget {
                   onTap: () {},
                 ),
                 ProfilMenuButton(
-                  title: 'Ubah Nama',
+                  title: 'Atur Diskon',
                   icon: Icons.home,
                   onTap: () {},
                 ),
                 ProfilMenuButton(
-                  title: 'Ubah Nama',
+                  title: 'Pemasukan & History',
                   icon: Icons.home,
                   onTap: () {},
                 ),
                 ProfilMenuButton(
-                  title: 'Ubah Nama',
+                  title: 'Tambah Menu',
+                  icon: Icons.home,
+                  onTap: () {},
+                ),
+                ProfilMenuButton(
+                  title: 'Log Out',
                   icon: Icons.home,
                   onTap: () {},
                 ),
