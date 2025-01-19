@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_canteen/components/stan/profil_menu_button.dart';
 
 class ProfilStanPage extends StatelessWidget {
   const ProfilStanPage({super.key});
@@ -7,16 +8,16 @@ class ProfilStanPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SafeArea(
-        child: const Center(
+        child: Center(
           child: Padding(
-            padding: EdgeInsets.only(left: 25),
+            padding: const EdgeInsets.only(left: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Row(
+                const Row(
                   children: [
                     ClipOval(
                       child: Image(
@@ -45,10 +46,29 @@ class ProfilStanPage extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
-                  height: 20,
+                const SizedBox(
+                  height: 50,
                 ),
-                Text("Sikma"),
+                ProfilMenuButton(
+                  title: 'Ubah Nama',
+                  icon: Icons.home,
+                  onTap: () {},
+                ),
+                ProfilMenuButton(
+                  title: 'Ubah Nama',
+                  icon: Icons.home,
+                  onTap: () {},
+                ),
+                ProfilMenuButton(
+                  title: 'Ubah Nama',
+                  icon: Icons.home,
+                  onTap: () {},
+                ),
+                ProfilMenuButton(
+                  title: 'Ubah Nama',
+                  icon: Icons.home,
+                  onTap: () {},
+                ),
               ],
             ),
           ),
