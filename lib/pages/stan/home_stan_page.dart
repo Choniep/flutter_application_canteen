@@ -13,10 +13,14 @@ class HomeStanPage extends StatefulWidget {
 }
 
 class _HomeStanPageState extends State<HomeStanPage> {
-  // menampilkan semua menu yang ada
-  List<Widget> getAllFoodItems(List<Food> fullMenu) {
-    return [
-      ListView.builder(
+  List<Food> menuItems(List<Food> fullMenu) {
+    return fullMenu.toList();
+  }
+
+  // Return a single widget for all foods
+  Widget getAllFoods(List<Food> fullMenu) {
+    return Expanded(
+      child: ListView.builder(
         itemCount: fullMenu.length,
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
@@ -33,7 +37,7 @@ class _HomeStanPageState extends State<HomeStanPage> {
           );
         },
       ),
-    ];
+    );
   }
 
   @override
@@ -58,6 +62,7 @@ class _HomeStanPageState extends State<HomeStanPage> {
               ),
             ],
           ),
+          getAllFoods(menuItems(fullMenu)),
         ],
       ),
     );
