@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/components/stan/profil_menu_button.dart';
+import 'package:flutter_application_canteen/pages/stan/add_product_page.dart';
+import 'package:flutter_application_canteen/pages/stan/discount_set_page.dart';
+import 'package:flutter_application_canteen/pages/stan/revenue_page.dart';
+import 'package:flutter_application_canteen/services/auth/auth_service.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ProfilStanPage extends StatelessWidget {
   const ProfilStanPage({super.key});
+
+  void logout() {
+    final _authService = AuthService();
+    _authService.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +32,11 @@ class ProfilStanPage extends StatelessWidget {
                     ClipOval(
                       child: Image(
                         image: AssetImage(
-                          'lib/images/burgers/beef_burger.webp',
+                          'lib/assets/images/profil/mici.jpg',
                         ),
                         width: 130,
+                        height: 130,
+                        fit: BoxFit.cover,
                       ),
                     ),
                     SizedBox(
@@ -38,7 +50,7 @@ class ProfilStanPage extends StatelessWidget {
                           style: TextStyle(fontSize: 16),
                         ),
                         Text(
-                          "Pak Lebah",
+                          "Mbak Mici 😋",
                           style: TextStyle(
                               fontSize: 32, fontWeight: FontWeight.bold),
                         ),
@@ -51,28 +63,51 @@ class ProfilStanPage extends StatelessWidget {
                 ),
                 ProfilMenuButton(
                   title: 'Ubah Nama',
-                  icon: Icons.home,
+                  icon: Iconsax.message_edit,
                   onTap: () {},
                 ),
                 ProfilMenuButton(
                   title: 'Atur Diskon',
-                  icon: Icons.home,
-                  onTap: () {},
+                  icon: Iconsax.receipt_discount,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DiscountSetPage(),
+                      ),
+                    );
+                  },
                 ),
                 ProfilMenuButton(
                   title: 'Pemasukan & History',
-                  icon: Icons.home,
-                  onTap: () {},
+                  icon: Iconsax.note,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RevenuePage(),
+                      ),
+                    );
+                  },
                 ),
                 ProfilMenuButton(
                   title: 'Tambah Menu',
-                  icon: Icons.home,
-                  onTap: () {},
+                  icon: Iconsax.add_square,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AddProductPage(),
+                      ),
+                    );
+                  },
                 ),
                 ProfilMenuButton(
                   title: 'Log Out',
-                  icon: Icons.home,
-                  onTap: () {},
+                  icon: Iconsax.logout,
+                  onTap: () {
+                    logout();
+                  },
                 ),
               ],
             ),

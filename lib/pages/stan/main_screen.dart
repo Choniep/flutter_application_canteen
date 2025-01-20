@@ -3,6 +3,7 @@ import 'package:flutter_application_canteen/pages/customer/home_page.dart';
 import 'package:flutter_application_canteen/pages/stan/home_stan_page.dart';
 import 'package:flutter_application_canteen/pages/stan/order_page.dart';
 import 'package:flutter_application_canteen/pages/stan/profil_stan_page.dart';
+import 'package:iconsax/iconsax.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -30,26 +31,28 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Iconsax.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'Home',
+            icon: Icon(Iconsax.note),
+            label: 'Orders',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.man),
-            label: 'Home',
+            icon: Icon(Iconsax.profile_circle),
+            label: 'Profil',
           ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Theme.of(context).colorScheme.inversePrimary,
-        unselectedItemColor: Colors.amber,
+        selectedItemColor: Color.fromARGB(255, 238, 105, 105),
+        unselectedItemColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.background,
       ),
     );
   }

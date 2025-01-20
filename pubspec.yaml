@@ -72,6 +72,7 @@ flutter:
     - lib/assets/images/drinks/
     - lib/assets/images/salads/
     - lib/assets/images/sides/
+    - lib/assets/images/profil/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
