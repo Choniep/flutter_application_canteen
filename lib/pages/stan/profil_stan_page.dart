@@ -6,8 +6,8 @@ import 'package:flutter_application_canteen/pages/stan/revenue_page.dart';
 import 'package:flutter_application_canteen/services/auth/auth_service.dart';
 import 'package:iconsax/iconsax.dart';
 
-class ProfilStanPage extends StatelessWidget {
-  const ProfilStanPage({super.key});
+class ProfilStan extends StatelessWidget {
+  const ProfilStan({super.key});
 
   void logout() {
     final _authService = AuthService();
@@ -97,7 +97,9 @@ class ProfilStanPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AddProductPage(),
+                        builder: (context) => AddProductPage(
+                          standId: '01',
+                        ),
                       ),
                     );
                   },

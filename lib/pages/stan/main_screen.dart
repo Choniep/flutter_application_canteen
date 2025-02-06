@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   static final List<Widget> _pages = [
     const HomeStanPage(),
     const OrderPage(),
-    const ProfilStanPage(),
+    const ProfilStan(),
   ];
 
   void _onItemTapped(int index) {

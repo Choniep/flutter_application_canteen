@@ -64,14 +64,15 @@ class CartPage extends StatelessWidget {
                             child: Center(child: Text("Cart is empty...")))
                         : Expanded(
                             child: ListView.builder(
-                                itemCount: userCart.length,
-                                itemBuilder: (context, index) {
-                                  // get individual cart item
-                                  final cartItem = userCart[index];
+                              itemCount: userCart.length,
+                              itemBuilder: (context, index) {
+                                // get individual cart item
+                                final cartItem = userCart[index];
 
-                                  // return cart title UI
-                                  return MyCartTile(cartItem: cartItem);
-                                }),
+                                // return cart title UI
+                                return MyCartTile(cartItem: cartItem);
+                              },
+                            ),
                           ),
                   ],
                 ),
