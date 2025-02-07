@@ -23,7 +23,7 @@ class AddProductPage extends StatelessWidget {
                   final result = await showDialog(
                     context: context,
                     builder: (context) => AddMenuDialog(
-                      stanId: '02',
+                      stanId: '01',
                     ),
                   );
 

@@ -11,6 +11,8 @@ class AuthService {
     return _firebaseAuth.currentUser;
   }
 
+  String? currentUserId; // buat simpen UID
+
   // sign in
   Future<UserCredential> signInWithEmailPassword(String email, password) async {
     try {
@@ -20,6 +22,8 @@ class AuthService {
         email: email,
         password: password,
       );
+
+      currentUserId = userCredential.user!.uid;
 
       // fetch user role from Firestore
       DocumentSnapshot userDoc = await _firestore
@@ -52,8 +56,14 @@ class AuthService {
       // take user UID
       String uid = userCredential.user!.uid;
 
+      // simpen UID
+      currentUserId = userCredential.user!.uid;
+
       // save to Firestore
-      await FirebaseFirestore.instance.collection('users').doc(uid).set({
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(currentUserId)
+          .set({
         'username': username,
         'email': email,
         'role': role,
