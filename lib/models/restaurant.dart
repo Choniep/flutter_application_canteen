@@ -11,7 +11,7 @@ class Restaurant extends ChangeNotifier {
     Food(
       name: "Beef Burger",
       description: "Very fresh beef burger, halal burger",
-      imagePath: "lib/images/burgers/chicken_burger.jpeg",
+      imagePath: "lib/assets/images/burgers/chicken_burger.jpeg",
       price: 20000,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -24,7 +24,7 @@ class Restaurant extends ChangeNotifier {
     Food(
       name: "Cheese Burger",
       description: "whooper jr chicken cheese burger",
-      imagePath: "lib/images/burgers/cheese_burger.webp",
+      imagePath: "lib/assets/images/burgers/cheese_burger.webp",
       price: 20000,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -36,7 +36,7 @@ class Restaurant extends ChangeNotifier {
     Food(
       name: "Beef Salad",
       description: "Salad dengan toping daging segar",
-      imagePath: "lib/images/salads/beef_salad.jpeg",
+      imagePath: "lib/assets/images/salads/beef_salad.jpeg",
       price: 15000,
       category: FoodCategory.salads,
       availableAddons: [
@@ -48,7 +48,7 @@ class Restaurant extends ChangeNotifier {
     Food(
       name: "Jasuke",
       description: "Jagung, susu, keju",
-      imagePath: "lib/images/sides/corn_soup.jpeg",
+      imagePath: "lib/assets/images/sides/corn_soup.jpeg",
       price: 10000,
       category: FoodCategory.sides,
       availableAddons: [
@@ -60,7 +60,7 @@ class Restaurant extends ChangeNotifier {
     Food(
       name: "Sour Sally",
       description: "Es krim cone sour sally",
-      imagePath: "lib/images/dessert/sour_sally.jpeg",
+      imagePath: "lib/assets/images/dessert/sour_sally.jpeg",
       price: 20000,
       category: FoodCategory.desserts,
       availableAddons: [
@@ -72,7 +72,7 @@ class Restaurant extends ChangeNotifier {
     Food(
       name: "Cappucino",
       description: "Kopi cappucino",
-      imagePath: "lib/images/drinks/cappucino_coffee.jpeg",
+      imagePath: "lib/assets/images/drinks/cappucino_coffee.jpeg",
       price: 8000,
       category: FoodCategory.drinks,
       availableAddons: [

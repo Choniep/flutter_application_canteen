@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/components/my_button.dart';
 import 'package:flutter_application_canteen/components/stan/add_menu_dialog.dart';
+import 'package:flutter_application_canteen/services/auth/auth_service.dart';
+import 'package:flutter_application_canteen/services/canteen/menu_service.dart';
 
 class AddProductPage extends StatelessWidget {
   final String standId;
@@ -23,7 +25,7 @@ class AddProductPage extends StatelessWidget {
                   final result = await showDialog(
                     context: context,
                     builder: (context) => AddMenuDialog(
-                      stanId: '01',
+                      stanId: standId,
                     ),
                   );
 

@@ -75,7 +75,7 @@ class MenuService {
     required List<AddOn> addOns,
     File? newImageFile, // Optional, hanya jika gambar diubah
   }) async {
-    try{
+    try {
       // Persiapkan data yang akan diupdate
       Map<String, dynamic> updateData = {
         'standId': standId,
@@ -87,13 +87,15 @@ class MenuService {
       };
 
       // jika ada gambar baru yang diupload
-      if(newImageFile != null){
+      if (newImageFile != null) {
         // 1. Ambil data menu yang lama untuk mendapatkan URL gambar yang lama
-        DocumentSnapshot menuDoc = await _firestore.collection('menus').doc(menuId).get();
+        DocumentSnapshot menuDoc =
+            await _firestore.collection('menus').doc(menuId).get();
         String oldImageUrl = menuDoc.get('imageUrl');
 
         // 2. Upload gambar baru ke storage
-        String fileName = 'menu_images/${DateTime.now().millisecondsSinceEpoch}';
+        String fileName =
+            'menu_images/${DateTime.now().millisecondsSinceEpoch}';
         Reference ref = _storage.ref().child(fileName);
         await ref.putFile(newImageFile);
         String newImageUrl = await ref.getDownloadURL();
@@ -102,9 +104,9 @@ class MenuService {
         updateData['imageUrl'] = newImageUrl;
 
         // 4. Hapus gambar lama dari storage
-        try{
+        try {
           await FirebaseStorage.instance.refFromURL(oldImageUrl).delete();
-        }catch (e){
+        } catch (e) {
           print('Warning: Failed to delete old image: $e');
           // lanjutkan proses meskipun gagal menghapus gambar lama
         }
@@ -112,7 +114,7 @@ class MenuService {
 
       // Update dokumen di Firestore
       await _firestore.collection('menus').doc(menuId).update(updateData);
-    } catch (e){
+    } catch (e) {
       throw Exception('Failed to update menu: $e');
     }
   }

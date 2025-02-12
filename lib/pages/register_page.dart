@@ -72,14 +72,6 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       );
     }
-
-    // showDialog(
-    //   context: context,
-    //   builder: (context) => AlertDialog(
-    //     backgroundColor: Theme.of(context).colorScheme.background,
-    //     title: const Text("User wants to register."),
-    //   ),
-    // );
   }
 
   @override
