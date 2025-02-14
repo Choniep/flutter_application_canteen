@@ -3,7 +3,8 @@ import 'package:flutter_application_canteen/components/my_button.dart';
 import 'package:flutter_application_canteen/components/customer/my_cart_tile.dart';
 import 'package:flutter_application_canteen/models/cart_item.dart';
 import 'package:flutter_application_canteen/models/restaurant.dart';
-import 'package:flutter_application_canteen/pages/customer/payment_page.dart';
+import 'package:flutter_application_canteen/pages/student/delivery_progress_page.dart';
+import 'package:flutter_application_canteen/pages/student/payment_page.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
@@ -80,11 +81,11 @@ class CartPage extends StatelessWidget {
 
               // button to pay
               MyButton(
-                text: "Go to checkout",
+                text: "Checkout",
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PaymentPage(),
+                    builder: (context) => const DeliveryProgressPage(),
                   ),
                 ),
               ),

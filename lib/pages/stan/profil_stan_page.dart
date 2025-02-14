@@ -79,18 +79,6 @@ class ProfilStan extends StatelessWidget {
                   },
                 ),
                 ProfilMenuButton(
-                  title: 'Pemasukan & History',
-                  icon: Iconsax.note,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RevenuePage(),
-                      ),
-                    );
-                  },
-                ),
-                ProfilMenuButton(
                   title: 'Tambah Menu',
                   icon: Iconsax.add_square,
                   onTap: () {

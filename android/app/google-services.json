@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:691730659749:android:faf87711e97edb6d44104c",
         "android_client_info": {
-          "package_name": "com.example.canteenstore"
+          "package_name": "com.example.flutter_application_canteen"
         }
       },
       "oauth_client": [],

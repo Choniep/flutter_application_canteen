@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_canteen/pages/customer/home_page.dart';
+import 'package:flutter_application_canteen/pages/student/home_page.dart';
 import 'package:flutter_application_canteen/pages/stan/home_stan_page.dart';
+import 'package:flutter_application_canteen/pages/stan/menu_list_page.dart';
 import 'package:flutter_application_canteen/pages/stan/order_page.dart';
 import 'package:flutter_application_canteen/pages/stan/profil_stan_page.dart';
 import 'package:iconsax/iconsax.dart';
@@ -19,6 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   static final List<Widget> _pages = [
     const HomeStanPage(),
     const OrderPage(),
+    const MenuListPage(),
     const ProfilStan(),
   ];
 
@@ -42,6 +44,10 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Iconsax.note),
             label: 'Orders',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Iconsax.menu),
+            label: 'Menu',
           ),
           BottomNavigationBarItem(
             icon: Icon(Iconsax.profile_circle),

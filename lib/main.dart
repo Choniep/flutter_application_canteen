@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_application_canteen/pages/customer/home_page.dart';
+import 'package:flutter_application_canteen/pages/student/home_page.dart';
 import 'package:flutter_application_canteen/pages/stan/main_screen.dart';
 import 'package:flutter_application_canteen/pages/stan/profil_stan_page.dart';
 import 'firebase_options.dart';

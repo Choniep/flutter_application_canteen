@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_canteen/components/my_food_tile.dart';
 import 'package:flutter_application_canteen/models/food.dart';
 import 'package:flutter_application_canteen/models/restaurant.dart';
-import 'package:flutter_application_canteen/pages/customer/food_page.dart';
+import 'package:flutter_application_canteen/pages/student/food_page.dart';
 import 'package:provider/provider.dart';
 
 class HomeStanPage extends StatefulWidget {

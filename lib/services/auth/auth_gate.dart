@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_canteen/pages/customer/home_page.dart';
+import 'package:flutter_application_canteen/pages/student/home_page.dart';
 import 'package:flutter_application_canteen/pages/stan/main_screen.dart';
 import 'package:flutter_application_canteen/services/auth/login_or_register.dart';
 
