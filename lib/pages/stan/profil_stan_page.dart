@@ -32,7 +32,7 @@ class ProfilStan extends StatelessWidget {
                     ClipOval(
                       child: Image(
                         image: AssetImage(
-                          'lib/assets/images/profil/mici.jpg',
+                          'lib/assets/images/profil/hindia.jpg',
                         ),
                         width: 130,
                         height: 130,
@@ -50,7 +50,7 @@ class ProfilStan extends StatelessWidget {
                           style: TextStyle(fontSize: 16),
                         ),
                         Text(
-                          "Mbak Mici 😋",
+                          "Baskara Putra",
                           style: TextStyle(
                               fontSize: 32, fontWeight: FontWeight.bold),
                         ),
@@ -62,12 +62,12 @@ class ProfilStan extends StatelessWidget {
                   height: 50,
                 ),
                 ProfilMenuButton(
-                  title: 'Ubah Nama',
+                  title: 'Ubah Profil',
                   icon: Iconsax.message_edit,
                   onTap: () {},
                 ),
                 ProfilMenuButton(
-                  title: 'Atur Diskon',
+                  title: 'Manage Diskon',
                   icon: Iconsax.receipt_discount,
                   onTap: () {
                     Navigator.push(
@@ -79,7 +79,7 @@ class ProfilStan extends StatelessWidget {
                   },
                 ),
                 ProfilMenuButton(
-                  title: 'Tambah Menu',
+                  title: 'Manage Menu',
                   icon: Iconsax.add_square,
                   onTap: () {
                     Navigator.push(

@@ -30,9 +30,11 @@ class AuthGate extends StatelessWidget {
                   }
 
                   String role = userSnapshot.data!['role'];
-                  if (role == 'Customer') {
+                  if (role == 'Customer' || role == 'Siswa') {
+                    // mengarahkan ke halaman utama siswa
                     return const HomePage();
-                  } else if (role == 'Pemilik Stan') {
+                  } else if (role == 'Pemilik Stan' || role == 'admin_stan') {
+                    // mengarahkan ke halaman utama stan
                     return const MainScreen();
                   }
                   return const LoginOrRegister();

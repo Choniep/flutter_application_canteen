@@ -46,7 +46,7 @@ class AuthService {
   Future<UserCredential> signUpWithEmailPassword(
       String email, password, username, role) async {
     try {
-      // sign user up
+      // create user with each email and password
       UserCredential userCredential =
           await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
@@ -60,22 +60,66 @@ class AuthService {
       currentUserId = userCredential.user!.uid;
 
       // save to Firestore
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(currentUserId)
-          .set({
+      await _firestore.collection('users').doc(userCredential.user!.uid).set({
+        'uid': userCredential.user!.uid,
         'username': username,
-        'email': email,
         'role': role,
-        'createdAt': DateTime.now(),
       });
 
       return userCredential;
+    } catch (e) {
+      rethrow;
     }
+  }
 
-    // catch any errors
-    on FirebaseAuthException catch (e) {
-      throw Exception(e.code);
+  // check if profile exist
+  Future<bool> checkProfileExists(String uid, String role) async {
+    try {
+      final collection = role == 'siswa' ? 'students' : 'stan';
+      final doc = await _firestore.collection(collection).doc(uid).get();
+      return doc.exists;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  // Create siswa profile
+  Future<void> createSiswaProfile({
+    required String uid,
+    required String namaSiswa,
+    required String alamat,
+    required String telp,
+    String? fotoUrl,
+  }) async {
+    try{
+      await _firestore.collection('siswa').doc(uid).set({
+        'uid': uid,
+        'namaSiswa': namaSiswa,
+        'alamat': alamat,
+        'telp': telp,
+        'fotoUrl': fotoUrl,
+      });
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  // create stan profile
+  Future<void> createStanProfile({
+    required String uid,
+    required String namaStan,
+    required String namaPemilik,
+    required String telp,
+  }) async {
+    try {
+      await _firestore.collection('stan').doc(uid).set({
+        'uid': uid,
+        'nama_stan': namaStan,
+        'nama_pemilik': namaPemilik,
+        'telp': telp,
+      });
+    } catch (e) {
+      rethrow;
     }
   }
 

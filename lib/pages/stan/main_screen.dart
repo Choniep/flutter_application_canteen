@@ -20,7 +20,6 @@ class _MainScreenState extends State<MainScreen> {
   static final List<Widget> _pages = [
     const HomeStanPage(),
     const OrderPage(),
-    const MenuListPage(),
     const ProfilStan(),
   ];
 
@@ -44,10 +43,6 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Iconsax.note),
             label: 'Orders',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Iconsax.menu),
-            label: 'Menu',
           ),
           BottomNavigationBarItem(
             icon: Icon(Iconsax.profile_circle),
