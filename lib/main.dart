@@ -8,9 +8,7 @@ import 'package:flutter_application_canteen/services/auth/auth_gate.dart';
 import 'package:flutter_application_canteen/services/auth/login_or_register.dart';
 import 'package:flutter_application_canteen/firebase_options.dart';
 import 'package:flutter_application_canteen/models/restaurant.dart';
-import 'package:flutter_application_canteen/pages/register_page.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_application_canteen/pages/login_page.dart';
 import 'package:flutter_application_canteen/themes/theme_provider.dart';
 
 void main() async {
